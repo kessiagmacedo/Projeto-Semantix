@@ -232,19 +232,21 @@ def main():
     fig.suptitle(f'04  |  {winner}: avaliar cada conta é essencial',fontsize=17,x=.04,ha='left')
     fig.text(.04,.01,'260.100 avaliações conta × tentativa; as mesmas 5.100 digitações são reutilizadas entre contas. Não são eventos independentes.',fontsize=10)
     fig.tight_layout(rect=(0,.05,1,.93));savefig(fig,'04_erros_por_conta.png')
-    fig=plt.figure(figsize=(14,8));fig.text(.06,.9,'O ritmo de digitação ajuda a reconhecer o usuário?',fontsize=24,weight='bold',color='#15364b')
-    fig.text(.06,.84,'PROJETO EBAC × SEMANTIX  /  AUTENTICAÇÃO COMPORTAMENTAL',fontsize=12,color='#008577')
+    fig=plt.figure(figsize=(14,8));fig.text(.06,.9,'Minha análise do ritmo de digitação',fontsize=24,weight='bold',color='#15364b')
+    fig.text(.06,.84,'KESSIA MACEDO  /  PROJETO INDIVIDUAL EBAC × SEMANTIX',fontsize=12,color='#008577')
     vals=[('PARTICIPANTES','51'),('DIGITAÇÕES','20.400'),('AUC MÉDIA',f'{means.loc[winner,"AUC"]:.3f}'),('EER MÉDIO',f'{means.loc[winner,"EER"]:.1%}')]
     for x,(label,value) in zip([.06,.30,.54,.78],vals):
         fig.text(x,.71,value,fontsize=35,weight='bold',color='#15364b');fig.text(x,.66,label,fontsize=11,color='#62778a')
-    blocks=[('EVIDÊNCIA',f'{winner} foi selecionado pela validação temporal.\nNo teste: FAR {means.loc[winner,"FAR"]:.1%} e FRR {means.loc[winner,"FRR"]:.1%}, em média por conta.'),
-            ('COMO FOI AVALIADO','Treino: sessões 1–4  →  limiares: 5–6  →  teste: 7–8.\nComparação de modelos com ajustes escolhidos apenas dentro do treino.'),
-            ('DECISÃO', 'Há sinal discriminativo neste cenário controlado.\nO resultado apoia pesquisa adicional; não demonstra segurança em produção.'),
-            ('LIMITE CENTRAL','Mesmos participantes, senha fixa e teclado físico.\nNão mede generalização para novos impostores, celulares ou ataques dirigidos.')]
+    blocks=[('EVIDÊNCIA',f'Selecionei o {winner} pela validação temporal.\nObtive no teste: FAR {means.loc[winner,"FAR"]:.1%} e FRR {means.loc[winner,"FRR"]:.1%}, em média por conta.'),
+            ('COMO FOI AVALIADO','Separei treino (1–4), limiares (5–6) e teste (7–8).\nComparei os modelos com ajustes escolhidos apenas dentro do treino.'),
+            ('DECISÃO', 'Encontrei sinal discriminativo neste cenário controlado.\nRecomendo mais pesquisa; não concluo segurança em produção.'),
+            ('LIMITE CENTRAL','Avaliei participantes conhecidos, senha fixa e teclado físico.\nAinda preciso testar novos impostores, celulares e ataques dirigidos.')]
     for y,(label,body) in zip([.55,.42,.29,.16],blocks):
         fig.text(.06,y,label,fontsize=11,weight='bold',color='#008577');fig.text(.24,y,body,fontsize=14,va='top',linespacing=1.45,color='#15364b')
     fig.text(.06,.035,'Fonte: CMU / Killourhy & Maxion (2009) • Protocolo próprio, diferente do benchmark original • Kessia Macedo',fontsize=10,color='#62778a')
     savefig(fig,'05_resumo_executivo.png')
+    from render_documentation import main as render_documentation
+    render_documentation()
     manifest={'seed':SEED,'data_md5':hashlib.md5(raw.read_bytes()).hexdigest(),
         'data_sha256':hashlib.sha256(raw.read_bytes()).hexdigest(),'python':platform.python_version(),
         'versions':{'pandas':pd.__version__,'numpy':np.__version__,'scikit-learn':sklearn.__version__,

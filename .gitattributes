@@ -1,0 +1,4 @@
+# Preservo os bytes do arquivo oficial para manter a verificação de integridade.
+data/DSL-StrongPasswordData.csv -text whitespace=cr-at-eol
+*.png binary
+*.gz binary

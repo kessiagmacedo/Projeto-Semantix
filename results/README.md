@@ -1,6 +1,6 @@
 # Dicionário dos resultados
 
-Todos os resultados numéricos são gerados por `python src/analysis.py`.
+Gerei todos os resultados numéricos com `python src/analysis.py`.
 
 | Arquivo | Conteúdo |
 |---|---|
@@ -18,7 +18,7 @@ Todos os resultados numéricos são gerados por `python src/analysis.py`.
 Em `predictions.csv.gz`, `account` é a conta avaliada; `row_id` é o índice da linha do CSV
 oficial, começando em zero, sem contar o cabeçalho; `actual=1` significa genuíno;
 `score` é a saída do modelo e `threshold` é o limiar validado. A decisão é aceitar quando
-`score >= threshold`. O score não foi calibrado como probabilidade operacional.
+`score >= threshold`. Não calibrei o score como probabilidade operacional.
 
 As 5.100 digitações de teste são reutilizadas contra 51 contas e quatro famílias:
 1.040.400 linhas de previsões. Essas linhas não representam tentativas independentes.
@@ -31,5 +31,5 @@ salvos com 17 algarismos significativos; leia com:
 pd.read_csv('results/predictions.csv.gz', float_precision='round_trip')
 ```
 
-O teste de auditoria reconstrói as métricas das 204 combinações de modelo/conta.
+Usei o teste de auditoria para reconstruir as métricas das 204 combinações de modelo/conta.
 Nenhum desvio-padrão apresentado deve ser interpretado como intervalo de confiança.
