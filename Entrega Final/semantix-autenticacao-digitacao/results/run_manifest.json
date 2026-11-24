@@ -1,0 +1,16 @@
+{
+  "seed": 42,
+  "data_md5": "470235f96568f28f9ea0da62234ec857",
+  "data_sha256": "b11d23538b1865fa6ecf4e8b78567caa312e9c1027604bb022fcc6ad7eaa7a33",
+  "python": "3.14.6",
+  "versions": {
+    "pandas": "3.0.3",
+    "numpy": "2.4.6",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.11.0",
+    "xgboost": "3.4.1"
+  },
+  "elapsed_seconds": 50.72,
+  "protocol": "train 1–4; threshold 5–6; test 7–8",
+  "cv": "train 1–2 / validate 3; train 1–3 / validate 4"
+}

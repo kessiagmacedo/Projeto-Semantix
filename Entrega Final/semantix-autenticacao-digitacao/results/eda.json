@@ -1,0 +1,20 @@
+{
+  "rows": 20400,
+  "subjects": 51,
+  "features": 31,
+  "nulls": 0,
+  "duplicates": 0,
+  "train_rows": 10200,
+  "validation_rows": 5100,
+  "test_rows": 5100,
+  "train_median_min": 1.5252,
+  "train_median_max": 5.60675,
+  "subjects_faster_session4": 48,
+  "median_change_session1_4_pct": -18.940086494848984,
+  "pca_2_variance": 0.4270641907729261,
+  "pca_95_components": 17,
+  "kmeans_ari_training": 0.23534303212671692,
+  "top_feature": "H.t",
+  "ud_negative_count": 8503,
+  "selected_model": "XGBoost"
+}

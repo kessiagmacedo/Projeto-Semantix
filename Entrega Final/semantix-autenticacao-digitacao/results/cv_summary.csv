@@ -1,0 +1,8 @@
+model,config,params,AUC
+Regressão logística,0,{},0.9637065882352942
+XGBoost,0,"{""max_depth"": 2, ""n_estimators"": 120}",0.9925432941176471
+XGBoost,1,"{""max_depth"": 3, ""n_estimators"": 120}",0.9939319215686274
+Árvore de decisão,0,"{""max_depth"": 4, ""min_samples_leaf"": 5}",0.8701116078431372
+Árvore de decisão,1,"{""max_depth"": 4, ""min_samples_leaf"": 20}",0.8745589019607842
+Árvore de decisão,2,"{""max_depth"": 8, ""min_samples_leaf"": 5}",0.8386984705882352
+Árvore de decisão,3,"{""max_depth"": 8, ""min_samples_leaf"": 20}",0.8655948235294117
